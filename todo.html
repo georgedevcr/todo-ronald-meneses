@@ -1,10 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDo</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>To-Do</title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="css/materialize.min.css">
+	<link rel="stylesheet" href="css/todo.css">
 </head>
-<body>
+
+<body class="blue-grey lighten-5">
+	<div class="container">
+		<div class="row cd">
+			<div class="col s12">
+				<h5>Listado ToDo</h5>
+			</div>
+			<div class="col s12">
+				<table id="tbl-todo" class="responsive-table highlight grey lighten-2 z-depth-2 hoverable tbl-todo">
+					<thead>
+						<tr>
+							<th>ToDo</th>
+							<th>Estado</th>
+							<th>Usuario</th>
+							<th>Acciones</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script type="text/javascript" src="js/data.js"></script>
+	<script type="text/javascript" src="js/todo.js"></script>
 </body>
+
 </html>

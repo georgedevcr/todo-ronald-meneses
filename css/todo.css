@@ -1,0 +1,36 @@
+.justify-icons{
+    text-align-last: justify;
+}
+
+td, th {
+    padding: 15px 10px;
+}
+
+@media (min-width: 990px) {
+    .tbl-todo thead tr th:nth-child(1) {
+        /* min-width: 200px;
+        width: 60%; */
+        width: 50%;
+    }
+
+    .tbl-todo thead tr th:nth-child(4) {
+        min-width: 110px; 
+        /* 
+        width: 10%; */
+        width: 10%;
+    }
+
+    .tbl-todo thead tr th:nth-child(5) {
+        display: none;
+    }
+    .tbl-todo tbody tr td:nth-child(5) {
+        display: none;
+    }
+}
+
+@media (max-width: 990px) {
+    .responsive-table tbody tr{
+        border-right: 1px solid rgba(0,0,0,0.12);
+    }
+}
+
