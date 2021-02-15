@@ -12,11 +12,34 @@
 
 <body class="blue-grey lighten-5">
 	<div class="container">
-		<div class="row cd">
+		<div class="row">
 			<div class="col s12">
-				<h5>Listado ToDo</h5>
-			</div>
-			<div class="col s12">
+				<h5>
+					Listado ToDo
+					<a class="waves-effect waves-light btn-small right teal darken-3" onclick="FrmTodo.Open()">
+						<i class="material-icons left">add</i>ToDo
+					</a>
+				</h5>
+				<div id="alert-action" class="alert alert-dismissible" role="alert" hidden>
+					<span></span>
+					<button type="button" class="btn-close" onclick="CloseAlert(this)"></button>
+				</div>
+				<form id="frm-todo" class="col s12 scale-transition grey lighten-2 z-depth-3 frm-todo" hidden>
+					<div class="row" style="margin-top: 5px;">
+						<div class="input-field col s12">
+							<textarea id="new-todo" class="materialize-textarea"></textarea>
+							<label for="new-todo">Nuevo ToDo</label>
+						</div>
+						<div class="input-field col s12 right-align">
+							<a class="waves-effect waves-light btn-small red darken-4" onclick="FrmTodo.Close()">
+								<i class="material-icons left">do_not_disturb_alt</i>Cancelar
+							</a>
+							<a class="waves-effect waves-light btn-small teal darken-3" onclick="FrmTodo.Save()">
+								<i class="material-icons left">save</i>Guardar
+							</a>
+						</div>
+					</div>
+				</form>
 				<table id="tbl-todo" class="responsive-table highlight grey lighten-2 z-depth-2 hoverable tbl-todo">
 					<thead>
 						<tr>
