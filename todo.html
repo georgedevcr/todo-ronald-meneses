@@ -12,11 +12,31 @@
 
 <body class="blue-grey lighten-5">
 	<div class="container">
+		<div class="row" hidden>
+			<div class="col s12">
+				<h5>
+					Filtrar
+					<a class="waves-effect waves-light btn-small right teal darken-3" onclick="">
+						<i class="material-icons left">search</i>Buscar
+					</a>
+				</h5>
+				<div class="input-field col s4">
+					<select multiple id="sch-cb-state">
+						<option value="" disabled selected>Seleccione el estado</option>
+					</select>
+					<label>Estado</label>
+				</div>
+				<div class="input-field col s8">
+					<textarea id="sch-txt-todo" rows="10" class="materialize-textarea"></textarea>
+					<label for="sch-txt-todo">ToDo</label>
+				</div>
+			</div>
+		</div>
 		<div class="row">
 			<div class="col s12">
 				<h5>
 					Listado ToDo
-					<a class="waves-effect waves-light btn-small right teal darken-3" onclick="FrmTodo.Open()">
+					<a class="waves-effect waves-light btn-small right teal darken-3" onclick="FrmTodo.NewTodo()">
 						<i class="material-icons left">add</i>ToDo
 					</a>
 				</h5>
@@ -24,11 +44,11 @@
 					<span></span>
 					<button type="button" class="btn-close" onclick="CloseAlert(this)"></button>
 				</div>
-				<form id="frm-todo" class="col s12 scale-transition grey lighten-2 z-depth-3 frm-todo" hidden>
+				<form id="frm-todo" class="col s12 scale-transition grey lighten-3 z-depth-3 frm-todo" hidden>
 					<div class="row" style="margin-top: 5px;">
 						<div class="input-field col s12">
 							<textarea id="new-todo" class="materialize-textarea"></textarea>
-							<label for="new-todo">Nuevo ToDo</label>
+							<label id="label-frm" for="new-todo">Nuevo ToDo</label>
 						</div>
 						<div class="input-field col s12 right-align">
 							<a class="waves-effect waves-light btn-small red darken-4" onclick="FrmTodo.Close()">
@@ -40,23 +60,50 @@
 						</div>
 					</div>
 				</form>
-				<table id="tbl-todo" class="responsive-table highlight grey lighten-2 z-depth-2 hoverable tbl-todo">
-					<thead>
-						<tr>
-							<th>ToDo</th>
-							<th>Estado</th>
-							<th>Usuario</th>
-							<th>Acciones</th>
-						</tr>
-					</thead>
-					<tbody>
-					</tbody>
-				</table>
+				<div>
+					<table id="tbl-todo" class="responsive-table highlight grey lighten-3 z-depth-2 hoverable tbl-todo">
+						<thead>
+							<tr>
+								<th>ToDo</th>
+								<th>Estado</th>
+								<th>Usuario</th>
+								<th>Acciones</th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
 	</div>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
-	<script type="text/javascript" src="js/data.js"></script>
+	<!-- <script type="text/javascript" src="js/data.js"></script> -->
+	<script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-analytics.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyAoQS_cnZozNsk-4eyfZNEi6MbakMSMvx0",
+        authDomain: "proyecto-todo-b8657.firebaseapp.com",
+        projectId: "proyecto-todo-b8657",
+        storageBucket: "proyecto-todo-b8657.appspot.com",
+        messagingSenderId: "305859015875",
+        appId: "1:305859015875:web:b9d04bf51c4a2dad521e76",
+        measurementId: "G-3VVGJBXH7W"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    
+    
+
+    </script>
 	<script type="text/javascript" src="js/todo.js"></script>
 </body>
 
