@@ -101,3 +101,7 @@ i.left{
     border-radius: .25rem;
     opacity: .5;
 }
+
+.pointer{
+    cursor: pointer;
+}
